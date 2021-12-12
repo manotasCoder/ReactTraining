@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter,Routes,Route } from "react-router-dom";
 import App from './components/App';
 import Weather from './components/Weather';
-import { createBrowserHistory } from 'history'
+import { createBrowserHistory } from 'history';
 import './index.css';
 
 export const history = createBrowserHistory(); 

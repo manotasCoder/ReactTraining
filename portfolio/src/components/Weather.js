@@ -1,12 +1,11 @@
 import React, {Component} from "react";
-
+import Header from "./Header";
 
 class Weather extends Component {
     state = { weather:false };
     random = false;
     componentDidMount(){
 
-        //no funciona
         fetch('https://api.openweathermap.org/data/2.5/weather?q=Madrid&appid=f5df47bb26c0a5bce8ef505cbd726f21&units=metric')
         .then((res) => res.json())
         .then((res) => {
@@ -27,6 +26,7 @@ class Weather extends Component {
         .catch( error => console.log('you guys are getting forecast? ', error) );
     }
 
+
     render() {
         let info = this.state.weather;
         let temp = info!==false?info.main.temp:'x';
@@ -37,7 +37,10 @@ class Weather extends Component {
             this.randomWeather();
         }
         return (
-            <p onClick={this.randomWeather}>{place}'s temperature is: {temp} cº and {humid}% humidity</p>
+            <div>
+                <Header />
+                <h2 style={{fontSize:'2em',fontWeight:'bold'}} onClick={this.randomWeather}>{place}'s temperature is: {temp} cº and {humid}% humidity</h2>
+            </div>
         )
     }
 }

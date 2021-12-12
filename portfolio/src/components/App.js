@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import { Link } from "react-router-dom";
 import Projects from './Projects';
 import SocialProfiles from './SocialProfiles';
-import profile from '../assets/profile.png';
+import Header from './Header';
 import Title from './Title.js';
+import profile from '../assets/profile.png';
 // class RegularClass{}
 // class ComponentClass extends Component{}
 
@@ -31,14 +31,7 @@ class App extends Component {
 
         return (
             <div>
-                <nav
-        style={{
-          borderBottom: "solid 1px",
-          paddingBottom: "1rem"
-        }}
-      >
-        <Link to="/globalTime">Global time</Link> |{" "}
-      </nav>
+                <Header />
                 <img className="profile" src={profile} alt="profile" />
                 <h1>Hello, my name is Bryan</h1>
                 {
@@ -67,5 +60,6 @@ class App extends Component {
         )
     }
 }
+
 
 export default App;
