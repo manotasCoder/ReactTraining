@@ -6,7 +6,7 @@ class Weather extends Component {
     random = false;
     componentDidMount(){
 
-        fetch('https://api.openweathermap.org/data/2.5/weather?q=Madrid&appid=f5df47bb26c0a5bce8ef505cbd726f21&units=metric')
+        fetch('https://api.openweathermap.org/data/2.5/weather?q=Madrid&appid=&units=metric')
         .then((res) => res.json())
         .then((res) => {
         this.setState({weather: res});
@@ -17,7 +17,7 @@ class Weather extends Component {
     randomWeather = ()  => {
         let lat=Math.floor(Math.random() * 181) - 90;
         let long=Math.floor(Math.random() * 361) - 180;
-        fetch('https://api.openweathermap.org/data/2.5/weather?lat='+lat+'&lon='+long+'&appid=f5df47bb26c0a5bce8ef505cbd726f21&units=metric')
+        fetch('https://api.openweathermap.org/data/2.5/weather?lat='+lat+'&lon='+long+'&appid=&units=metric')
         .then((res) => res.json())
         .then((res) => {
         this.random = true;
